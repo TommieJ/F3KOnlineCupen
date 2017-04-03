@@ -2,6 +2,7 @@
 Här hittar du ett LUA skript till din Taranis-sändare för att hålla poängräkning för [onlinecupen F3K](http://modellsegelflyg.se/StaticContent.aspx?pageid=2337).
 ## Installation
 Ladda hem skriptet OCF3K.lua och lägg det på SD-kortet i din Taranis i foldern '/SCRIPTS/TELEMETRY/'.
+Du laddar enklast hem filen genom att klicka på filnamnet och sedan högerklicka på knappen 'Raw' uppe till höger, välj sedan 'spara som' (eller liknande, beror på om du använder Chrome, Safari, FireFox, Internet Explorer etc) till lämpligt ställe. Sen kopierar du in filen till din Taranis SD kort i foldern '/SCRIPTS/TELEMETRY/'.
 
 ## Användarinstruktioner
 Tidtagning för flygningen startas med launch-switchen. Skriptet har SF som launch-switch, men det är lätt att ändra överst bland inställningarna i skriptet.
