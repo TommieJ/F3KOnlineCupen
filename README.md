@@ -8,4 +8,6 @@ Tidtagning för flygningen startas med launch-switchen. Skriptet har SF som laun
 När du landar(eller fångar planet i kastpinnen) aktiverar du launch-switchen igen för att stoppa tiden.
 Därefter får du en fråga om du fick landningspoäng. Landningspoängen symboliseras med en ifylld checkbox för raden för flygningen. Därefter förbereds nästa flygning.
 
-När alla flygningar är klara sparas omgången ned på SD kortet i filen '/LOGS/OCF3K.csv'.
+När alla flygningar är klara sparas omgången ned på SD kortet i filen '/LOGS/OCF3K.csv'. Som standard används ';' som avskiljare (för det funkar bäst i mitt svenska excel :) , bara att öppna filen direkt), men det går att byta till valfritt tecken i skriptets inställningar högst upp i filen.
+
+Tryck på 'Menu' knappen för att starta en ny omgång.
