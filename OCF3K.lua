@@ -25,7 +25,7 @@ local taskList = {
     }
 local currentTask = 1
 
-local scores = { 0, 0 } --, 0, 0, 0 }
+local scores = { 0, 0, 0, 0, 0 }
 
 local landings = { false, false, false, false, false }
 
