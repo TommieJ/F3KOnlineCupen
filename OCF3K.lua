@@ -1,6 +1,7 @@
 -- ************ Användarinställningar ************
 local launchSwitch = "sf"
 local announcements = { 150, 120, 90, 60, 30, 15, 10, 5, 3, 2, 1, 0 }
+local delimeter = ";"
 -- ************ SLUT Användarinställningar ************
 
 
@@ -46,7 +47,7 @@ local yesHiglighted = true
 local scoresRootPath = "/LOGS/"
 
 -- ********** Drawing functions ************
-local function drawTotalRow()
+local function getTotalScore()
     local totalScore = 0
     for row, score in ipairs(scores) do
         totalScore = totalScore + score
@@ -57,8 +58,11 @@ local function drawTotalRow()
             totalScore = totalScore + 10
         end
     end
+    return totalScore
+end
 
-    lcd.drawNumber(column2, row6, totalScore, MIDSIZE)
+local function drawTotalRow()
+    lcd.drawNumber(column2, row6, getTotalScore(), MIDSIZE)
 end
 
 local function drawScoreRow(row, score, flag)
@@ -129,15 +133,17 @@ local function endFlight()
 end
 local function persistScores()
     local dateNow = getDateTime()
-    local fileName = string.format("f3kOC_%04d-%02d-%02d_%02d_%02d_%02d.txt", dateNow.year, dateNow.mon, dateNow.day, dateNow.hour, dateNow.min, dateNow.sec)
-    local file = io.open(string.format("%s%s", scoresRootPath, fileName), "w")
+    local formatedDate = string.format("%04d-%02d-%02d %02d:%02d:%02d", dateNow.year, dateNow.mon, dateNow.day, dateNow.hour, dateNow.min, dateNow.sec)
+    local fileName = "OCF3K.csv"
+    local file = io.open(string.format("%s%s", scoresRootPath, fileName), "a")
     if file  then
-        io.write(file, "flygning;landning;poäng\n")
+        io.write(file, formatedDate)
         for row, score in ipairs(scores) do
             local landingScore = 0
             if landings[row] then landingScore = 10 end
-            io.write(file, targetTimes[row], "s;", landingScore, ";", score, "\n")
+            io.write(file, delimeter, score, delimeter, landingScore)
         end
+        io.write(file, delimeter, getTotalScore(), "\n")
         io.close(file)
     end
 end
