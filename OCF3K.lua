@@ -29,7 +29,7 @@ local scores = { 0, 0, 0, 0, 0 }
 
 local landings = { false, false, false, false, false }
 
-local targetTimes = { 5, 90, 120, 150, 180 }
+local targetTimes = { 60, 90, 120, 150, 180 }
 
 local editField = { false, false, false, false, false }
 local editLanding = { false, false, false, false, false }
